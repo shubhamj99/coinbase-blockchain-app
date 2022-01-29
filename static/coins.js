@@ -66,14 +66,4 @@ export const coins = [
     change: 200.24,
     allocation: 17.89,
   },
-  {
-    name: 'CP Token',
-    sign: 'CTP',
-    logo: ethLogo,
-    balanceUsd: 300,
-    balanceCoin: 6.35664236,
-    priceUsd: 9.22,
-    change: 24.24,
-    allocation: 17.89,
-  },
 ]
