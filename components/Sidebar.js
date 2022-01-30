@@ -47,7 +47,6 @@ margin-left: 1.5rem;
 
 const NavItemsContainer = styled.div`
 margin-top: 3rem;
-
 &:hover {
     cursor: pointer;
 }
@@ -61,11 +60,9 @@ font-weight: 500;
 border-radius: 0.5rem;
 margin-bottom: 1.5rem;
 height: 4rem;
-
 &:hover {
     background-color: #141519;
 }
-
 &:hover > 
 `
 

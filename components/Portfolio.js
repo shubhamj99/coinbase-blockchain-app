@@ -1,13 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import styled from 'styled-components';
 import { coins } from '../static/coins';
+import BalanceChart from './BalanceChart';
 import Coin from './Coin';
 
-const Portfolio = () => {
+const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
+    const [walletBalance, setWalletBalance] = useState(0);
+    const tokenToUSD = {}
+
+    for(const token of sanityTokens){
+        tokenToUSD[token.contractAddress] = Number(token.usdPrice)
+    }
+    
+
+    useEffect(() => {
+        const calculateTotalBalance = async() => {
+            const totalBalance = await Promise.all(
+                thirdWebTokens.map(async token => {
+                    const balance = await token.balanceOf(walletAddress)
+                    return Number(balance.displayValue) * tokenToUSD[token.address]
+                })
+            )
+            console.log(totalBalance.reduce((acc, curr) => acc + curr, 0))
+            setWalletBalance(totalBalance.reduce((acc, curr) => acc + curr, 0));
+        }
+        return calculateTotalBalance();
+    }, [thirdWebTokens, sanityTokens]);
+    
+
+
+
     return (
         <Wrapper>
             <Content>
+                <Chart>
+                    <div>
+                        <Balance>
+                            <BalanceTitle>Portfolio Balance</BalanceTitle>
+                            <BalanceValue>
+                                {'$'}
+                                { walletBalance ? walletBalance.toLocaleString() : ' __' }
+                                {/* 65,000.00 */}
+                            </BalanceValue>
+                        </Balance>
+                    </div>
+                    <BalanceChart />
+                </Chart>
                 <PortfolioTable>
                     <TableItem>
                         <Title>Your Assets</Title>
@@ -45,12 +84,34 @@ const Wrapper = styled.div`
 flex: 1;
 display: flex;
 justify-content: center;
+margin-bottom: 2.5rem;
+overflow-y: scroll !important;
+::-webkit-scrollbar {
+    display: none;
+}
 `
 
 const Content = styled.div`
 width: 100%;
 max-width: 1000px;
 padding: 2rem 1rem;
+`
+const Chart = styled.div`
+border: 1px solid #282b2f;
+padding: 1rem 2rem;
+`
+
+const Balance = styled.div``
+
+const BalanceTitle = styled.div`
+color: #8a919e;
+font-size: 0.9rem;
+`
+
+const BalanceValue = styled.div`
+font-size: 1.5rem;
+font-weight: 700;
+margin: 0.5rem 0;
 `
 
 const PortfolioTable = styled.div`
