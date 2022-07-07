@@ -29,7 +29,11 @@ const TransferModal = ({ sanityTokens, thirdWebTokens, walletAddress }) => {
           />
         );
       case "receive":
-        return <h3>Receive</h3>;
+        return <Receive
+            setAction={setAction}
+            selectedToken={selectedToken}
+            walletAddress={walletAddress}
+            />;
       case "select":
         return (
           <CoinSelector
@@ -48,13 +52,14 @@ const TransferModal = ({ sanityTokens, thirdWebTokens, walletAddress }) => {
               width: "100%",
               height: "100%",
               display: "flex",
+              flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
               fontSize: "1rem",
             }}
           >
             <h2>Transfer in progress...</h2>
-            <TailSpin height="100" width="100" color="grey" ariaLabel="loading" />
+            <TailSpin height="100" width="100" color="#3773f5" ariaLabel="loading" />
           </div>
         );
       case "transferred":
