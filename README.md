@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project.
+This is a [Next.js](https://nextjs.org/) project. To visit click on https://coinbase-blockchain-app-alpha.vercel.app/
 
 ## Getting Started
 
