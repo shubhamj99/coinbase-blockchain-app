@@ -30,8 +30,8 @@ const Dashboard = ({ address }) => {
         return getSanityAndThirdWebTokens();
     }, [])
 
-    console.log('Sanity -> ', sanityTokens);
-    console.log('ThirdWeb -> ', thirdWebTokens);
+    // console.log('Sanity -> ', sanityTokens);
+    // console.log('ThirdWeb -> ', thirdWebTokens);
 
     return (
         <Wrapper>

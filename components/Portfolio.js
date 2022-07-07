@@ -39,8 +39,8 @@ const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
                         <Balance>
                             <BalanceTitle>Portfolio Balance</BalanceTitle>
                             <BalanceValue>
-                                {'$'}
-                                { walletBalance ? walletBalance.toLocaleString() : ' __' }
+                                {'$ '}
+                                { walletBalance ? walletBalance.toLocaleString() : 'Fetching.....' }
                                 {/* 65,000.00 */}
                             </BalanceValue>
                         </Balance>
