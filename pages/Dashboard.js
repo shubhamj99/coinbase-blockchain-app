@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Main from '../components/Main';
+import Header from '../components/header';
+import Main from '../components/main';
 import styled from 'styled-components';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/sidebar';
 import { ethers } from 'ethers';
 import { ThirdwebSDK } from '@3rdweb/sdk';
 

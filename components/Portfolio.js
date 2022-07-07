@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import styled from 'styled-components';
 import { coins } from '../static/coins';
-import BalanceChart from './BalanceChart';
-import Coin from './Coin';
+import BalanceChart from './balanceChart';
+import Coin from './coin';
 
 const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
     const [walletBalance, setWalletBalance] = useState(0);

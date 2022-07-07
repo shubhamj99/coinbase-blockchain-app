@@ -1,7 +1,7 @@
 import React from 'react';
-import Portfolio from './Portfolio';
+import Portfolio from './portfolio';
 import styled from 'styled-components';
-import Promos from './Promos';
+import Promos from './promos';
 
 const Main = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
     return (

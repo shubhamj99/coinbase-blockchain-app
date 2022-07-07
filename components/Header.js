@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Modal from "react-modal";
 import { useRouter } from "next/router";
-import TransferModal from "./modal/TransferModal";
+import TransferModal from "./Modal/transferModal";
 import Link from "next/link";
 
 Modal.setAppElement("#__next");

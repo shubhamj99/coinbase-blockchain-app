@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Transfer from "./Transfer";
-import CoinSelector from "./CoinSelector";
+import Transfer from "./transfer";
+import CoinSelector from "./coinSelector";
 import { TailSpin } from "react-loader-spinner";
-import Receive from "./Receive";
+import Receive from "./receive";
 
 const TransferModal = ({ sanityTokens, thirdWebTokens, walletAddress }) => {
   const [action, setAction] = useState("send");
